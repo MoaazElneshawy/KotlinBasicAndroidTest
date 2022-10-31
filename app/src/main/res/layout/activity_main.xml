@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiCostOfService"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_store_24"
+        app:startIconTint="@color/green">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etCostOfService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cost_of_service"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvHowWasService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:drawablePadding="5dp"
+        android:text="@string/how_was_service"
+        app:drawableStartCompat="@drawable/ic_baseline_room_service_24"
+        app:drawableTint="@color/green"
+        app:layout_constraintStart_toStartOf="@id/tiCostOfService"
+        app:layout_constraintTop_toBottomOf="@id/tiCostOfService" />
+
+    <RadioGroup
+        android:id="@+id/rgState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:checkedButton="@id/rbAmazing"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/tiCostOfService"
+        app:layout_constraintTop_toBottomOf="@id/tvHowWasService">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbAmazing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amazing" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/good" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok" />
+    </RadioGroup>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvRoundTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="5dp"
+        android:text="@string/round_up_tip"
+        app:drawableStartCompat="@drawable/ic_baseline_arrow_outward_24"
+        app:drawableTint="@color/green"
+        app:layout_constraintStart_toStartOf="@id/tiCostOfService"
+        app:layout_constraintTop_toBottomOf="@id/rgState" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swRoundTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvRoundTip" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCalculate"
+        style="@style/ButtonBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        app:layout_constraintTop_toBottomOf="@id/swRoundTip" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/tip_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
