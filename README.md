@@ -16,6 +16,8 @@ Tips:
    There are a number of methods that return a ViewAction but for now we are going to use the typeText() method.
    
    **.perform(ViewActions.closeSoftKeyboard())** after writing on editText is needed on smaller devices,
-   and also for avoiding test fails because of PerformException:Error single click
+   and also for avoiding test fails because of PerformException:Error single click.
+   
+4- Test rules run before every test in a test class.   
    
    
